@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const Heading = () => {
   return (
     <div className="max-w-7xl space-y-4">
-      <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
+      <h1 className="scroll-m-20 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight">
         Your ideas, Documents & plans. Unified. Welcome to{" "}
         <span className="underline">Jotion</span>
       </h1>
