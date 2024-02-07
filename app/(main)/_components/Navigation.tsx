@@ -10,13 +10,14 @@ import {
   SheetClose,
   Sheet,
 } from "@/components/ui/sheet";
+import UserItem from "./UserItem";
 
 const Navigation = () => {
   return (
     <>
       <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-full flex-col">
         <div>
-          <p>action items</p>
+          <UserItem />
         </div>
         <div>
           <p>Documents</p>
@@ -42,7 +43,7 @@ const MobileSidebar = () => (
     <SheetContent side="left" className="w-[200px] sm:w-[300px] p-0">
       <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-full flex-col">
         <div>
-          <p>action items</p>
+          <UserItem />
         </div>
         <div>
           <p>Documents</p>
