@@ -22,6 +22,7 @@ const DocumentsPage = () => {
       error: "Problem creating Document 💀",
     });
   };
+
   return (
     <div className="flex flex-col h-full items-center justify-center space-y-4">
       <Image
