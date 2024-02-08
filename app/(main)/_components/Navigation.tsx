@@ -14,7 +14,7 @@ import { api } from "@/convex/_generated/api";
 import { useMutation, useQuery } from "convex/react";
 
 import UserItem from "./UserItem";
-import { PlusCircle, Settings } from "lucide-react";
+import { PlusCircle, Search, Settings } from "lucide-react";
 import Item from "./Item";
 import { toast } from "sonner";
 import { DocumentList } from "./DocumentList";
@@ -37,6 +37,7 @@ const Navigation = () => {
       <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-full flex-col">
         <div>
           <UserItem />
+          <Item label="Search" icon={Search} onClick={() => {}} isSearch />
           <Item label="Settings" icon={Settings} onClick={() => {}} />
           <Item label="New page" onClick={handleCreate} icon={PlusCircle} />
         </div>
