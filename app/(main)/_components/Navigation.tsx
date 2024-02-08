@@ -17,9 +17,9 @@ import UserItem from "./UserItem";
 import { PlusCircle, Settings } from "lucide-react";
 import Item from "./Item";
 import { toast } from "sonner";
+import { DocumentList } from "./DocumentList";
 
 const Navigation = () => {
-  // const documents = useQuery(api.documents.get);
   const create = useMutation(api.documents.create);
 
   const handleCreate = () => {
@@ -37,20 +37,11 @@ const Navigation = () => {
       <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-full flex-col">
         <div>
           <UserItem />
+          <Item label="Settings" icon={Settings} onClick={() => {}} />
           <Item label="New page" onClick={handleCreate} icon={PlusCircle} />
-          <Item
-            label="Settings"
-            icon={Settings}
-            isSearch
-            level={0}
-            key={12}
-            onClick={() => {}}
-          />
         </div>
         <div>
-          {/* {documents?.map((document) => (
-            <p key={document._id}>{document.title}</p>
-          ))} */}
+          <DocumentList />
         </div>
         <div
           onClick={() => {}}
