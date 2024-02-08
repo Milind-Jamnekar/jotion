@@ -10,9 +10,14 @@ import {
   SheetClose,
   Sheet,
 } from "@/components/ui/sheet";
+import { api } from "@/convex/_generated/api";
+import { useQuery } from "convex/react";
+
 import UserItem from "./UserItem";
 
 const Navigation = () => {
+  const documents = useQuery(api.documents.get);
+
   return (
     <>
       <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-full flex-col">
@@ -20,7 +25,9 @@ const Navigation = () => {
           <UserItem />
         </div>
         <div>
-          <p>Documents</p>
+          {documents?.map((document) => (
+            <p key={document._id}>{document.title}</p>
+          ))}
         </div>
 
         <div
