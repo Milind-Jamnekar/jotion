@@ -83,3 +83,19 @@ export const create = mutation({
     return document;
   },
 });
+
+export const getTrash = query({
+  args: {},
+  handler: async (ctx, args) => {
+    const identity = await getUserIdentity(ctx);
+
+    const documents = await ctx.db
+      .query("documents")
+      .withIndex("by_user", (q) => q.eq("userId", identity))
+      .filter((q) => q.eq(q.field("isArchived"), true))
+      .order("asc")
+      .collect();
+
+    return documents;
+  },
+});
