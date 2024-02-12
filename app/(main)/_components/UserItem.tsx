@@ -19,10 +19,10 @@ const UserItem = () => {
       <DropdownMenuTrigger asChild>
         <div
           role="button"
-          className="flex items-center w-full text-sm p-3 hover:bg-primary/5"
+          className="flex items-center justify-between w-full text-sm p-3 hover:bg-primary/5"
         >
-          <div className="gap-x-2 flex items-center max-w-[150px]">
-            <Avatar className="h-5 w-5">
+          <div className="gap-x-4 md:gap-x-2 flex md:items-center gap-y-2 md:gap-y-0 flex-col md:flex-row  max-w-[150px]">
+            <Avatar className="md:h-5 md:w-5">
               <AvatarImage src={user?.imageUrl} />
               <AvatarFallback>{user?.fullName}</AvatarFallback>
             </Avatar>
@@ -31,7 +31,7 @@ const UserItem = () => {
             </span>
           </div>
 
-          <ChevronsLeftIcon className="h-4 w-4 rotate-90 ml-2 text-muted-foreground" />
+          <ChevronsLeftIcon className="h-4 w-4 rotate-90 text-muted-foreground hidden md:block" />
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent

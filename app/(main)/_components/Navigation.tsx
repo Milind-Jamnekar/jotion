@@ -14,7 +14,7 @@ import { api } from "@/convex/_generated/api";
 import { useMutation, useQuery } from "convex/react";
 
 import UserItem from "./UserItem";
-import { PlusCircle, Search, Settings } from "lucide-react";
+import { Menu, PlusCircle, Search, Settings } from "lucide-react";
 import Item from "./Item";
 import { toast } from "sonner";
 import { DocumentList } from "./DocumentList";
@@ -57,8 +57,8 @@ const Navigation = () => {
 const MobileSidebar = () => (
   <Sheet>
     <SheetTrigger asChild>
-      <Button size="icon" className="absolute top-0 left-0 md:hidden">
-        Meow
+      <Button size="icon" className="absolute top-0 left-0 md:hidden ml-4 mt-4">
+        <Menu />
       </Button>
     </SheetTrigger>
     <SheetContent side="left" className="w-[200px] sm:w-[300px] p-0">
