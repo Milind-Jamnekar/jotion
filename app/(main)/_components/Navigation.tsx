@@ -14,7 +14,7 @@ import { api } from "@/convex/_generated/api";
 import { useMutation, useQuery } from "convex/react";
 
 import UserItem from "./UserItem";
-import { Menu, PlusCircle, Search, Settings } from "lucide-react";
+import { Menu, Plus, PlusCircle, Search, Settings } from "lucide-react";
 import Item from "./Item";
 import { toast } from "sonner";
 import { DocumentList } from "./DocumentList";
@@ -41,8 +41,9 @@ const Navigation = () => {
           <Item label="Settings" icon={Settings} onClick={() => {}} />
           <Item label="New page" onClick={handleCreate} icon={PlusCircle} />
         </div>
-        <div>
+        <div className="mt-4">
           <DocumentList />
+          <Item label="Add new Page" onClick={handleCreate} icon={Plus} />
         </div>
         <div
           onClick={() => {}}
@@ -67,7 +68,7 @@ const MobileSidebar = () => (
           <UserItem />
         </div>
         <div>
-          <p>Documents</p>
+          <DocumentList />
         </div>
       </aside>
     </SheetContent>

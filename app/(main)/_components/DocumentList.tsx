@@ -3,7 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
-import { FileIcon } from "lucide-react";
+import { FileIcon, Plus } from "lucide-react";
 
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
@@ -65,9 +65,7 @@ export const DocumentList = ({
           expanded && "last:block",
           level === 0 && "hidden"
         )}
-      >
-        No pages inside
-      </p>
+      ></p>
       {documents.map((document) => (
         <div key={document._id}>
           <Item
