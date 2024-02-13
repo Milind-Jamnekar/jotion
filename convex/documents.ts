@@ -145,3 +145,19 @@ export const restore = mutation({
     return document;
   },
 });
+
+export const remove = mutation({
+  args: { id: v.id("documents") },
+  handler: async (ctx, args) => {
+    const identity = await getUserIdentity(ctx);
+
+    const existingDocument = await ctx.db.get(args.id);
+    if (!existingDocument) throw new Error("not found");
+
+    if (existingDocument.userId !== identity) throw new Error("not authorized");
+
+    const document = await ctx.db.delete(args.id);
+
+    return document;
+  },
+});

@@ -24,6 +24,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import Trashbox from "./Trashbox";
 
 const Navigation = () => {
   const create = useMutation(api.documents.create);
@@ -50,16 +51,16 @@ const Navigation = () => {
         </div>
         <div className="mt-4">
           <DocumentList />
-          <Item label="Add new Page" onClick={handleCreate} icon={Plus} />
+          <Item onClick={handleCreate} icon={Plus} label="Add a page" />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
               <Item label="Trash" icon={Trash} />
             </PopoverTrigger>
             <PopoverContent
-              className="p-0 w-72"
+              className="p-1 w-72"
               side={isMobile ? "bottom" : "right"}
             >
-              lsjfk
+              <Trashbox />
             </PopoverContent>
           </Popover>
         </div>
