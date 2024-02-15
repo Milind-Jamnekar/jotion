@@ -33,6 +33,7 @@ import UserItem from "./UserItem";
 import Item from "./Item";
 import { DocumentList } from "./DocumentList";
 import Trashbox from "./Trashbox";
+import SettingModal from "@/components/modals/SettingModal";
 
 const Navigation = () => {
   const create = useMutation(api.documents.create);
@@ -55,7 +56,9 @@ const Navigation = () => {
         <div>
           <UserItem />
           <Item label="Search" icon={Search} onClick={search.onOpen} isSearch />
-          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <SettingModal>
+            <Item label="Settings" icon={Settings} onClick={() => {}} />
+          </SettingModal>
           <Item label="New page" onClick={handleCreate} icon={PlusCircle} />
         </div>
         <div className="mt-4">

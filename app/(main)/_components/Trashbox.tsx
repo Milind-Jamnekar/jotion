@@ -1,5 +1,5 @@
-import { ConfirmModal } from "@/components/modals/Confirm";
-import Spinner from "@/components/ui/Spinner";
+import { ConfirmModal } from "@/components/modals/ConfirmModal";
+import Spinner from "@/components/Spinner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { api } from "@/convex/_generated/api";

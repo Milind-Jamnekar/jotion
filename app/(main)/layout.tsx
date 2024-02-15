@@ -1,5 +1,5 @@
 "use client";
-import Spinner from "@/components/ui/Spinner";
+import Spinner from "@/components/Spinner";
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import { ReactNode, useRef } from "react";
@@ -12,7 +12,7 @@ import {
 import { ImperativePanelGroupHandle } from "react-resizable-panels";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/ui/button";
-import { SearchCommand } from "@/components/ui/search-command";
+import { SearchCommand } from "@/components/SearchCommand";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const { isLoading, isAuthenticated } = useConvexAuth();
