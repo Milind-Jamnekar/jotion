@@ -12,6 +12,7 @@ import {
 import { ImperativePanelGroupHandle } from "react-resizable-panels";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/ui/button";
+import { SearchCommand } from "@/components/ui/search-command";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const { isLoading, isAuthenticated } = useConvexAuth();
@@ -37,7 +38,10 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
           <Navigation />
         </ResizablePanel>
         <ResizableHandle withHandle />
-        <ResizablePanel>{children}</ResizablePanel>
+        <ResizablePanel>
+          <SearchCommand />
+          {children}
+        </ResizablePanel>
       </ResizablePanelGroup>
     </div>
   );
