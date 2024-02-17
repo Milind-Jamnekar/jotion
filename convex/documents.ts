@@ -241,7 +241,7 @@ export const getById = query({
 
     if (!document) throw new Error("Not found");
 
-    if (document.isPublished && !document.isArchived) return document;
+    if (!document.isPublished && !document.isArchived) return document;
 
     const userId = identity.subject;
 
@@ -271,7 +271,7 @@ export const update = mutation({
 
     if (!existingDocument) throw new Error("not found");
 
-    if (existingDocument.userId !== id) throw new Error("Not authorized");
+    if (existingDocument.userId !== userId) throw new Error("Not authorized");
 
     const document = await ctx.db.patch(id, { ...rest });
 

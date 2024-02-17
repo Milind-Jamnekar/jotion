@@ -111,7 +111,7 @@ const MobileSidebar = () => {
           <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[200px] sm:w-[300px] p-0">
+      <SheetContent side="left" className="w-[250px] sm:w-[300px] p-0">
         <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-full flex-col">
           <div>
             <UserItem />

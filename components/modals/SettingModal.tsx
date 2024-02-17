@@ -1,6 +1,5 @@
 "use client";
 
-import { useSetting } from "@/hooks/use-setting";
 import {
   Dialog,
   DialogContent,
@@ -13,7 +12,6 @@ import { Label } from "../ui/label";
 import { ModeToggle } from "../ThemeSelector";
 
 const SettingModal = ({ children }: { children: ReactNode }) => {
-  //   const settings = useSetting();
   return (
     <Dialog>
       <DialogTrigger className="w-full">{children}</DialogTrigger>
