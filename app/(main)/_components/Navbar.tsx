@@ -4,6 +4,7 @@ import { Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react";
 import { useParams } from "next/navigation";
 import Title from "./Title";
+import Banner from "./Banner";
 
 const Navbar = () => {
   const params = useParams();
@@ -17,10 +18,13 @@ const Navbar = () => {
         <Title.Skeleton />
       </>
     );
+
   if (document === null) return null;
+
   return (
-    <nav className="bg-background dark:bg-[#1f1f1f] w-full flex items-center gap-x-4">
+    <nav className="bg-background dark:bg-[#1f1f1f] w-full flex flex-col gap-x-4">
       <Title initialData={document} />
+      {document.isArchived && <Banner documentId={document._id} />}
     </nav>
   );
 };

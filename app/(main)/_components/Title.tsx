@@ -36,7 +36,7 @@ const Title = ({ initialData }: { initialData: Doc<"documents"> }) => {
   };
 
   return (
-    <div className="flex items-center gap-x-1">
+    <div className="flex items-center gap-x-1 ml-16 md:mx-2">
       {!!initialData.icon && <p>{initialData.icon}</p>}
       {edit ? (
         <Input
