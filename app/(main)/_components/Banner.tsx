@@ -34,7 +34,7 @@ const Banner = ({ documentId }: { documentId: Id<"documents"> }) => {
     router.push("/documents");
   };
   return (
-    <div className="p-2 flex items-center bg-rose-500 mt-2 text-center justify-center gap-x-3">
+    <div className="p-2 flex items-center text-white bg-rose-500 mt-2 text-center justify-center gap-x-3">
       <p>This page is in trash</p>
       <Button
         variant="outline"

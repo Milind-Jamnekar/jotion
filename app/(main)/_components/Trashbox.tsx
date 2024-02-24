@@ -47,6 +47,8 @@ const Trashbox = () => {
       success: "Note removed!",
       error: "Failed to restore note.",
     });
+
+    router.push("/documents");
   };
 
   if (!documents) {

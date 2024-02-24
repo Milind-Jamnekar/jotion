@@ -105,10 +105,11 @@ const MobileSidebar = () => {
     <Sheet>
       <SheetTrigger asChild>
         <Button
-          size="icon"
+          size="sm"
           className="absolute top-0 left-0 md:hidden ml-4 mt-4"
+          variant="secondary"
         >
-          <Menu />
+          <Menu className="h-4 w-4" />
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-[250px] sm:w-[300px] p-0">
