@@ -10,6 +10,7 @@ import { Doc } from "@/convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 import { IconPicker } from "@/components/IconPicker";
+import CoverImageModal from "@/components/modals/CoverImageModal";
 
 interface ToolbarProps {
   initialData: Doc<"documents">;
@@ -102,15 +103,16 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
           </IconPicker>
         )}
         {!initialData.coverImage && !preview && (
-          <Button
-            // onClick={coverImage.onOpen}
-            className="text-muted-foreground text-xs"
-            variant="outline"
-            size="sm"
-          >
-            <ImageIcon className="h-4 w-4 mr-2" />
-            Add cover
-          </Button>
+          <CoverImageModal>
+            <Button
+              className="text-muted-foreground text-xs"
+              variant="outline"
+              size="sm"
+            >
+              <ImageIcon className="h-4 w-4 mr-2" />
+              Add cover
+            </Button>
+          </CoverImageModal>
         )}
       </div>
       {isEditing && !preview ? (

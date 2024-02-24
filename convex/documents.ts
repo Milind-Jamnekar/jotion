@@ -256,7 +256,7 @@ export const update = mutation({
     id: v.id("documents"),
     title: v.optional(v.string()),
     content: v.optional(v.string()),
-    converImage: v.optional(v.string()),
+    coverImage: v.optional(v.string()),
     icon: v.optional(v.string()),
     isPublished: v.optional(v.boolean()),
   },
@@ -275,9 +275,11 @@ export const update = mutation({
 
     if (existingDocument.userId !== userId) throw new Error("Not authorized");
 
-    const document = await ctx.db.patch(id, { ...rest });
-
-    return document;
+    try {
+      const document = await ctx.db.patch(id, { ...rest });
+    } catch (error) {
+      console.log("problem", error);
+    }
   },
 });
 
